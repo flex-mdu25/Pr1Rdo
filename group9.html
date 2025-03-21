@@ -38,7 +38,7 @@
       }
 
       async function fetchDataFromGoogleSheet(id) {
-        const url = `https://script.google.com/macros/s/AKfycbxxNzOFYZazT8lIgC9XAMWLsNR5ynJMu_QFuNi00w4L7ewIy2pKF1aMlJVduVLK8tvkQw/exec?id=${id}`;
+        const url = `https://script.google.com/macros/s/AKfycbx-KDnrlvcKQ205kX1yVB7NT6-jP4KJjrfPrLtHk3h6CNaOlUA5h-ZkTLumCh30N82GXA/exec?id=${id}`;
         const response = await fetch(url);
         const data = await response.json();
         return data;
@@ -57,7 +57,7 @@
             liff.shareTargetPicker([
               {
                 "type": "flex",
-                "altText": "สนภ.2 นทพ.",
+                "altText": "สนภ.1 นทพ.",
                 "contents": 
 // -------ใส่ JSON ----------
 
@@ -66,178 +66,371 @@
   "contents": [
     {
       "type": "bubble",
-      "size": "mega",
-      "header": {
+      "body": {
         "type": "box",
         "layout": "vertical",
         "contents": [
           {
             "type": "image",
-            "url": "https://j5pr.rtarf.mi.th/FlexMsg/PRD/images/2rdo/bg222.jpg",
+            "url": "https://img2.pic.in.th/pic/-3b1876c1ad07ff364.png",
             "size": "full",
-            "margin": "none",
-            "aspectRatio": "2:3",
             "aspectMode": "cover",
-            "offsetTop": "sm",
-            "offsetStart": "none",
-            "offsetEnd": "none"
+            "aspectRatio": "7:15",
+            "gravity": "center"
           },
           {
-            "type": "text",
-            "text": data.group1_date,
-            "weight": "bold",
-            "align": "center",
-            "color": "#f9fbfc",
-            "size": "lg",
-            "offsetTop": "sm"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": data.group1_date,
+                    "size": "lg",
+                    "color": "#ffffff",
+                    "weight": "bold",
+                    "align": "center"
+                  }
+                ],
+                "paddingAll": "xxl"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url": "https://sv1.img.in.th/ijvzuu.png",
+                    "size": "full",
+                    "aspectRatio": "30:6",
+                    "action": {
+                      "type": "uri",
+                      "label": "แชร์ข่าวทั้งหมด",
+                      "uri": data.liffshare
+                    },
+                    "offsetTop": "sm"
+                  }
+                ],
+                "paddingBottom": "md",
+                "paddingTop": "0%"
+              },
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/43bd021a85f078fadd0e7b4e03c1ac6f.png",
+                "size": "full",
+                "aspectRatio": "7:1"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingTop": "1px"
           }
         ],
-        "backgroundColor": "#010150",
-        "spacing": "none",
-        "margin": "none",
-        "borderWidth": "none",
-        "cornerRadius": "none",
-        "paddingAll": "md",
-        "offsetStart": "none"
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://img5.pic.in.th/file/secure-sv1/-16994e3802fef94f7.jpg",
+        "size": "full",
+        "aspectRatio": "1400:200",
+        "aspectMode": "cover"
       },
       "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "สนภ.1 นทพ.",
+            "size": "md",
+            "color": "#F8F8FF",
+            "weight": "bold",
+            "align": "center",
+            "offsetBottom": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url": data.group1_img,
+                    "margin": "none",
+                    "size": "full",
+                    "aspectMode": "cover",
+                    "aspectRatio": "16:10"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": []
+              }
+            ],
+            "backgroundColor": "#ffffff",
+            "borderWidth": "medium",
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "xs"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": data.group1_description,
+                "size": "md",
+                "color": "#FFFAFA",
+                "gravity": "center",
+                "wrap": true,
+                "weight": "regular"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": []
+              }
+            ],
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "md"
+          }
+        ],
+        "background": {
+          "type": "linearGradient",
+          "angle": "0deg",
+          "startColor": "#4876FF",
+          "endColor": "#0000FF"
+        }
+      },
+      "footer": {
         "type": "box",
         "layout": "horizontal",
         "contents": [
           {
             "type": "box",
-            "layout": "horizontal",
+            "layout": "vertical",
             "contents": [
               {
                 "type": "image",
-                "url": "https://img2.pic.in.th/pic/a229d55e7804dfacea.jpg",
-                "aspectMode": "cover",
-                "align": "start",
-                "size": "full",
+                "url": "https://img5.pic.in.th/file/secure-sv1/7418e69a50ef608963801fd1cb243961.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
                 "action": {
                   "type": "uri",
-                  "label": "action",
-                  "uri": "https://2rdo.rtarf.mi.th/"
+                  "label": "อ่านเพิ่มเติม",
+                  "uri": data.group1_link
                 }
-              },
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [],
+            "width": "5%"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
               {
                 "type": "image",
-                "url": "https://img5.pic.in.th/file/secure-sv1/a3b805f1ee6205ac91.jpg",
-                "size": "full",
-                "aspectMode": "cover",
+                "url": "https://img5.pic.in.th/file/secure-sv1/71361d56f862147bd6079e4a19d2ae3f.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
                 "action": {
                   "type": "uri",
-                  "label": "action",
-                  "uri": "https://www.facebook.com/?locale=th_TH"
+                  "label": "คลิกเพื่อแชร์",
+                  "uri": data.group1_share
                 }
+              }
+            ]
+          }
+        ],
+        "backgroundColor": "#03303Acc",
+        "paddingAll": "1px"
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://img5.pic.in.th/file/secure-sv1/-16994e3802fef94f7.jpg",
+        "size": "full",
+        "aspectRatio": "1400:200",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "นพค.11",
+            "size": "md",
+            "color": "#F8F8FF",
+            "weight": "bold",
+            "align": "center",
+            "offsetBottom": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url": data.group2_img,
+                    "margin": "none",
+                    "size": "full",
+                    "aspectMode": "cover",
+                    "aspectRatio": "16:10"
+                  }
+                ]
               },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": []
+              }
+            ],
+            "backgroundColor": "#ffffff",
+            "borderWidth": "medium",
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "xs"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": data.group2_description,
+                "size": "md",
+                "color": "#FFFAFA",
+                "gravity": "center",
+                "wrap": true,
+                "weight": "regular"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": []
+              }
+            ],
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "md"
+          }
+        ],
+        "background": {
+          "type": "linearGradient",
+          "angle": "0deg",
+          "startColor": "#4876FF",
+          "endColor": "#0000FF"
+        }
+      },
+      "footer": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
               {
                 "type": "image",
-                "url": "https://img5.pic.in.th/file/secure-sv1/a4.jpg",
-                "size": "full",
-                "aspectMode": "cover",
+                "url": "https://img5.pic.in.th/file/secure-sv1/7418e69a50ef608963801fd1cb243961.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
                 "action": {
                   "type": "uri",
-                  "label": "action",
-                  "uri": "https://www.instagram.com/explore/locations/274653324/"
+                  "label": "อ่านเพิ่มเติม",
+                  "uri": data.group2_link
                 }
-              },
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [],
+            "width": "5%"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
               {
                 "type": "image",
-                "url": "https://img2.pic.in.th/pic/a5518c64bf45751ccd.jpg",
-                "size": "full",
-                "aspectMode": "cover",
+                "url": "https://img5.pic.in.th/file/secure-sv1/71361d56f862147bd6079e4a19d2ae3f.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
                 "action": {
                   "type": "uri",
-                  "label": "action",
-                  "uri": "https://www.tiktok.com/@2nd_regional_development?_t=8rgJsYKALvs&_r=1"
+                  "label": "คลิกเพื่อแชร์",
+                  "uri": data.group2_share
                 }
               }
-            ],
-            "backgroundColor": "#010150"
+            ]
           }
         ],
-        "paddingAll": "lg",
-        "backgroundColor": "#010150",
-        "offsetTop": "none"
-      },
-      "footer": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://img2.pic.in.th/pic/a699afa1d7b843a63a.jpg",
-            "size": "xl",
-            "aspectMode": "cover",
-            "aspectRatio": "6:1.5",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": data.liffshare
-            }
-          }
-        ],
-        "spacing": "xxl",
-        "margin": "xxl",
-        "paddingAll": "md",
-        "backgroundColor": "#127cc0"
+        "backgroundColor": "#03303Acc",
+        "paddingAll": "1px"
       }
     },
     {
       "type": "bubble",
-      "header": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/flex-mdu25/Pr2rdo/refs/heads/main/img/h-2rdo.png",
-            "size": "full",
-            "aspectRatio": "15:2",
-            "aspectMode": "cover"
-          }
-        ],
-        "paddingAll": "none",
-        "backgroundColor": "#042e6c"
-      },
       "hero": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": data.group1_img1,
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:1",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": data.group1_img1
-            }
-          },
-          {
-            "type": "text",
-            "text": data.group1_description,
-            "wrap": true,
-            "margin": "sm"
-          }
-        ],
-        "paddingAll": "sm"
+        "type": "image",
+        "url": "https://img5.pic.in.th/file/secure-sv1/-16994e3802fef94f7.jpg",
+        "size": "full",
+        "aspectRatio": "1400:200",
+        "aspectMode": "cover"
       },
       "body": {
         "type": "box",
         "layout": "vertical",
         "contents": [
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "xs"
+            "type": "text",
+            "text": "นพค.12 ",
+            "size": "md",
+            "color": "#F8F8FF",
+            "weight": "bold",
+            "align": "center",
+            "offsetBottom": "md"
           },
           {
             "type": "box",
-            "layout": "horizontal",
+            "layout": "vertical",
             "contents": [
               {
                 "type": "box",
@@ -245,166 +438,135 @@
                 "contents": [
                   {
                     "type": "image",
-                    "url": data.group1_img2,
+                    "url": data.group3_img,
+                    "margin": "none",
                     "size": "full",
                     "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group1_img2
-                    }
+                    "aspectRatio": "16:10"
                   }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                ]
               },
               {
                 "type": "box",
                 "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group1_img3,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group1_img3
-                    },
-                    "aspectRatio": "4:3"
-                  }
-                ],
-                "width": "35%",
-                "justifyContent": "center",
-                "paddingAll": "md"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group1_img4,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group1_img4
-                    }
-                  }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                "contents": []
               }
             ],
-            "paddingAll": "xs",
-            "backgroundColor": "#ebecee"
+            "backgroundColor": "#ffffff",
+            "borderWidth": "medium",
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "xs"
           },
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "sm"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": data.group3_description,
+                "size": "md",
+                "color": "#FFFAFA",
+                "gravity": "center",
+                "wrap": true,
+                "weight": "regular"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": []
+              }
+            ],
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "md"
           }
         ],
-        "paddingAll": "xs",
-        "backgroundColor": "#fefefe",
-        "borderWidth": "none",
-        "paddingEnd": "none",
-        "offsetEnd": "xs",
-        "justifyContent": "flex-end",
-        "alignItems": "center"
+        "background": {
+          "type": "linearGradient",
+          "angle": "0deg",
+          "startColor": "#4876FF",
+          "endColor": "#0000FF"
+        }
       },
       "footer": {
         "type": "box",
-        "layout": "vertical",
+        "layout": "horizontal",
         "contents": [
           {
-            "type": "image",
-            "url": "https://img2.pic.in.th/pic/-872d483f7320f659.jpg",
-            "margin": "xs",
-            "align": "center",
-            "gravity": "top",
-            "offsetTop": "xs",
-            "aspectRatio": "9:1.5",
-            "size": "full",
-            "aspectMode": "cover"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/7418e69a50ef608963801fd1cb243961.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "อ่านเพิ่มเติม",
+                  "uri": data.group3_link
+                }
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [],
+            "width": "5%"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/71361d56f862147bd6079e4a19d2ae3f.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิกเพื่อแชร์",
+                  "uri": data.group3_share
+                }
+              }
+            ]
           }
         ],
-        "backgroundColor": "#fefefe",
-        "paddingAll": "none"
-      },
-      "styles": {
-        "hero": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "body": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "footer": {
-          "backgroundColor": "#f1f5f3"
-        }
+        "backgroundColor": "#03303Acc",
+        "paddingAll": "1px"
       }
     },
     {
       "type": "bubble",
-      "header": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/flex-mdu25/Pr2rdo/refs/heads/main/img/h-2rdo.png",
-            "size": "full",
-            "aspectRatio": "15:2",
-            "aspectMode": "cover"
-          }
-        ],
-        "paddingAll": "none",
-        "backgroundColor": "#042e6c"
-      },
       "hero": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": data.group2_img1,
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:1",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": data.group2_img1
-            }
-          },
-          {
-            "type": "text",
-            "text": data.group2_description,
-            "wrap": true,
-            "margin": "sm"
-          }
-        ],
-        "paddingAll": "sm"
+        "type": "image",
+        "url": "https://img5.pic.in.th/file/secure-sv1/-16994e3802fef94f7.jpg",
+        "size": "full",
+        "aspectRatio": "1400:200",
+        "aspectMode": "cover"
       },
       "body": {
         "type": "box",
         "layout": "vertical",
         "contents": [
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "xs"
+            "type": "text",
+            "text": "นพค.13 ",
+            "size": "md",
+            "color": "#F8F8FF",
+            "weight": "bold",
+            "align": "center",
+            "offsetBottom": "md"
           },
           {
             "type": "box",
-            "layout": "horizontal",
+            "layout": "vertical",
             "contents": [
               {
                 "type": "box",
@@ -412,166 +574,135 @@
                 "contents": [
                   {
                     "type": "image",
-                    "url": data.group2_img2,
+                    "url": data.group4_img,
+                    "margin": "none",
                     "size": "full",
                     "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group2_img2
-                    }
+                    "aspectRatio": "16:10"
                   }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                ]
               },
               {
                 "type": "box",
                 "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group2_img3,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group2_img3
-                    },
-                    "aspectRatio": "4:3"
-                  }
-                ],
-                "width": "35%",
-                "justifyContent": "center",
-                "paddingAll": "md"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group2_img4,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group2_img4
-                    }
-                  }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                "contents": []
               }
             ],
-            "paddingAll": "xs",
-            "backgroundColor": "#ebecee"
+            "backgroundColor": "#ffffff",
+            "borderWidth": "medium",
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "xs"
           },
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "sm"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": data.group4_description,
+                "size": "md",
+                "color": "#FFFAFA",
+                "gravity": "center",
+                "wrap": true,
+                "weight": "regular"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": []
+              }
+            ],
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "md"
           }
         ],
-        "paddingAll": "xs",
-        "backgroundColor": "#fefefe",
-        "borderWidth": "none",
-        "paddingEnd": "none",
-        "offsetEnd": "xs",
-        "justifyContent": "flex-end",
-        "alignItems": "center"
+        "background": {
+          "type": "linearGradient",
+          "angle": "0deg",
+          "startColor": "#4876FF",
+          "endColor": "#0000FF"
+        }
       },
       "footer": {
         "type": "box",
-        "layout": "vertical",
+        "layout": "horizontal",
         "contents": [
           {
-            "type": "image",
-            "url": "https://img2.pic.in.th/pic/-872d483f7320f659.jpg",
-            "margin": "xs",
-            "align": "center",
-            "gravity": "top",
-            "offsetTop": "xs",
-            "aspectRatio": "9:1.5",
-            "size": "full",
-            "aspectMode": "cover"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/7418e69a50ef608963801fd1cb243961.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "อ่านเพิ่มเติม",
+                  "uri": data.group4_link
+                }
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [],
+            "width": "5%"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/71361d56f862147bd6079e4a19d2ae3f.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิกเพื่อแชร์",
+                  "uri": data.group4_share
+                }
+              }
+            ]
           }
         ],
-        "backgroundColor": "#fefefe",
-        "paddingAll": "none"
-      },
-      "styles": {
-        "hero": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "body": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "footer": {
-          "backgroundColor": "#f1f5f3"
-        }
+        "backgroundColor": "#03303Acc",
+        "paddingAll": "1px"
       }
     },
     {
       "type": "bubble",
-      "header": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/flex-mdu25/Pr2rdo/refs/heads/main/img/h-2rdo.png",
-            "size": "full",
-            "aspectRatio": "15:2",
-            "aspectMode": "cover"
-          }
-        ],
-        "paddingAll": "none",
-        "backgroundColor": "#042e6c"
-      },
       "hero": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": data.group3_img1,
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:1",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": data.group3_img1
-            }
-          },
-          {
-            "type": "text",
-            "text": data.group3_description,
-            "wrap": true,
-            "margin": "sm"
-          }
-        ],
-        "paddingAll": "sm"
+        "type": "image",
+        "url": "https://img5.pic.in.th/file/secure-sv1/-16994e3802fef94f7.jpg",
+        "size": "full",
+        "aspectRatio": "1400:200",
+        "aspectMode": "cover"
       },
       "body": {
         "type": "box",
         "layout": "vertical",
         "contents": [
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "xs"
+            "type": "text",
+            "text": "นพค.14 ",
+            "size": "md",
+            "color": "#F8F8FF",
+            "weight": "bold",
+            "align": "center",
+            "offsetBottom": "md"
           },
           {
             "type": "box",
-            "layout": "horizontal",
+            "layout": "vertical",
             "contents": [
               {
                 "type": "box",
@@ -579,166 +710,135 @@
                 "contents": [
                   {
                     "type": "image",
-                    "url": data.group3_img2,
+                    "url": data.group5_img,
+                    "margin": "none",
                     "size": "full",
                     "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group3_img2
-                    }
+                    "aspectRatio": "16:10"
                   }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                ]
               },
               {
                 "type": "box",
                 "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group3_img3,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group3_img3
-                    },
-                    "aspectRatio": "4:3"
-                  }
-                ],
-                "width": "35%",
-                "justifyContent": "center",
-                "paddingAll": "md"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group3_img4,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group3_img4
-                    }
-                  }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                "contents": []
               }
             ],
-            "paddingAll": "xs",
-            "backgroundColor": "#ebecee"
+            "backgroundColor": "#ffffff",
+            "borderWidth": "medium",
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "xs"
           },
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "sm"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": data.group5_description,
+                "size": "md",
+                "color": "#FFFAFA",
+                "gravity": "center",
+                "wrap": true,
+                "weight": "regular"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": []
+              }
+            ],
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "md"
           }
         ],
-        "paddingAll": "xs",
-        "backgroundColor": "#fefefe",
-        "borderWidth": "none",
-        "paddingEnd": "none",
-        "offsetEnd": "xs",
-        "justifyContent": "flex-end",
-        "alignItems": "center"
+        "background": {
+          "type": "linearGradient",
+          "angle": "0deg",
+          "startColor": "#4876FF",
+          "endColor": "#0000FF"
+        }
       },
       "footer": {
         "type": "box",
-        "layout": "vertical",
+        "layout": "horizontal",
         "contents": [
           {
-            "type": "image",
-            "url": "https://img2.pic.in.th/pic/-872d483f7320f659.jpg",
-            "margin": "xs",
-            "align": "center",
-            "gravity": "top",
-            "offsetTop": "xs",
-            "aspectRatio": "9:1.5",
-            "size": "full",
-            "aspectMode": "cover"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/7418e69a50ef608963801fd1cb243961.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "อ่านเพิ่มเติม",
+                  "uri": data.group5_link
+                }
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [],
+            "width": "5%"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/71361d56f862147bd6079e4a19d2ae3f.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิกเพื่อแชร์",
+                  "uri": data.group5_share
+                }
+              }
+            ]
           }
         ],
-        "backgroundColor": "#fefefe",
-        "paddingAll": "none"
-      },
-      "styles": {
-        "hero": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "body": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "footer": {
-          "backgroundColor": "#f1f5f3"
-        }
+        "backgroundColor": "#03303Acc",
+        "paddingAll": "1px"
       }
     },
     {
       "type": "bubble",
-      "header": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/flex-mdu25/Pr2rdo/refs/heads/main/img/h-2rdo.png",
-            "size": "full",
-            "aspectRatio": "15:2",
-            "aspectMode": "cover"
-          }
-        ],
-        "paddingAll": "none",
-        "backgroundColor": "#042e6c"
-      },
       "hero": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": data.group4_img1,
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:1",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": data.group4_img1
-            }
-          },
-          {
-            "type": "text",
-            "text": data.group4_description,
-            "wrap": true,
-            "margin": "sm"
-          }
-        ],
-        "paddingAll": "sm"
+        "type": "image",
+        "url": "https://img5.pic.in.th/file/secure-sv1/-16994e3802fef94f7.jpg",
+        "size": "full",
+        "aspectRatio": "1400:200",
+        "aspectMode": "cover"
       },
       "body": {
         "type": "box",
         "layout": "vertical",
         "contents": [
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "xs"
+            "type": "text",
+            "text": "นพค.15",
+            "size": "md",
+            "color": "#F8F8FF",
+            "weight": "bold",
+            "align": "center",
+            "offsetBottom": "md"
           },
           {
             "type": "box",
-            "layout": "horizontal",
+            "layout": "vertical",
             "contents": [
               {
                 "type": "box",
@@ -746,166 +846,135 @@
                 "contents": [
                   {
                     "type": "image",
-                    "url": data.group4_img2,
+                    "url": data.group6_img,
+                    "margin": "none",
                     "size": "full",
                     "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group4_img2
-                    }
+                    "aspectRatio": "16:10"
                   }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                ]
               },
               {
                 "type": "box",
                 "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group4_img3,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group4_img3
-                    },
-                    "aspectRatio": "4:3"
-                  }
-                ],
-                "width": "35%",
-                "justifyContent": "center",
-                "paddingAll": "md"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group4_img4,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group4_img4
-                    }
-                  }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                "contents": []
               }
             ],
-            "paddingAll": "xs",
-            "backgroundColor": "#ebecee"
+            "backgroundColor": "#ffffff",
+            "borderWidth": "medium",
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "xs"
           },
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "sm"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": data.group6_description,
+                "size": "md",
+                "color": "#FFFAFA",
+                "gravity": "center",
+                "wrap": true,
+                "weight": "regular"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": []
+              }
+            ],
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "md"
           }
         ],
-        "paddingAll": "xs",
-        "backgroundColor": "#fefefe",
-        "borderWidth": "none",
-        "paddingEnd": "none",
-        "offsetEnd": "xs",
-        "justifyContent": "flex-end",
-        "alignItems": "center"
+        "background": {
+          "type": "linearGradient",
+          "angle": "0deg",
+          "startColor": "#4876FF",
+          "endColor": "#0000FF"
+        }
       },
       "footer": {
         "type": "box",
-        "layout": "vertical",
+        "layout": "horizontal",
         "contents": [
           {
-            "type": "image",
-            "url": "https://img2.pic.in.th/pic/-872d483f7320f659.jpg",
-            "margin": "xs",
-            "align": "center",
-            "gravity": "top",
-            "offsetTop": "xs",
-            "aspectRatio": "9:1.5",
-            "size": "full",
-            "aspectMode": "cover"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/7418e69a50ef608963801fd1cb243961.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "อ่านเพิ่มเติม",
+                  "uri": data.group6_link
+                }
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [],
+            "width": "5%"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/71361d56f862147bd6079e4a19d2ae3f.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิกเพื่อแชร์",
+                  "uri": data.group6_share
+                }
+              }
+            ]
           }
         ],
-        "backgroundColor": "#fefefe",
-        "paddingAll": "none"
-      },
-      "styles": {
-        "hero": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "body": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "footer": {
-          "backgroundColor": "#f1f5f3"
-        }
+        "backgroundColor": "#03303Acc",
+        "paddingAll": "1px"
       }
     },
     {
       "type": "bubble",
-      "header": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/flex-mdu25/Pr2rdo/refs/heads/main/img/h-2rdo.png",
-            "size": "full",
-            "aspectRatio": "15:2",
-            "aspectMode": "cover"
-          }
-        ],
-        "paddingAll": "none",
-        "backgroundColor": "#042e6c"
-      },
       "hero": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": data.group5_img1,
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:1",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": data.group5_img1
-            }
-          },
-          {
-            "type": "text",
-            "text": data.group5_description,
-            "wrap": true,
-            "margin": "sm"
-          }
-        ],
-        "paddingAll": "sm"
+        "type": "image",
+        "url": "https://img5.pic.in.th/file/secure-sv1/-16994e3802fef94f7.jpg",
+        "size": "full",
+        "aspectRatio": "1400:200",
+        "aspectMode": "cover"
       },
       "body": {
         "type": "box",
         "layout": "vertical",
         "contents": [
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "xs"
+            "type": "text",
+            "text": "นพค.16 ",
+            "size": "md",
+            "color": "#F8F8FF",
+            "weight": "bold",
+            "align": "center",
+            "offsetBottom": "md"
           },
           {
             "type": "box",
-            "layout": "horizontal",
+            "layout": "vertical",
             "contents": [
               {
                 "type": "box",
@@ -913,166 +982,135 @@
                 "contents": [
                   {
                     "type": "image",
-                    "url": data.group5_img2,
+                    "url": data.group7_img,
+                    "margin": "none",
                     "size": "full",
                     "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group5_img2
-                    }
+                    "aspectRatio": "16:10"
                   }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                ]
               },
               {
                 "type": "box",
                 "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group5_img3,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group5_img3
-                    },
-                    "aspectRatio": "4:3"
-                  }
-                ],
-                "width": "35%",
-                "justifyContent": "center",
-                "paddingAll": "md"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group5_img4,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group5_img4
-                    }
-                  }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                "contents": []
               }
             ],
-            "paddingAll": "xs",
-            "backgroundColor": "#ebecee"
+            "backgroundColor": "#ffffff",
+            "borderWidth": "medium",
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "xs"
           },
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "sm"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": data.group7_description,
+                "size": "md",
+                "color": "#FFFAFA",
+                "gravity": "center",
+                "wrap": true,
+                "weight": "regular"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": []
+              }
+            ],
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "md"
           }
         ],
-        "paddingAll": "xs",
-        "backgroundColor": "#fefefe",
-        "borderWidth": "none",
-        "paddingEnd": "none",
-        "offsetEnd": "xs",
-        "justifyContent": "flex-end",
-        "alignItems": "center"
+        "background": {
+          "type": "linearGradient",
+          "angle": "0deg",
+          "startColor": "#4876FF",
+          "endColor": "#0000FF"
+        }
       },
       "footer": {
         "type": "box",
-        "layout": "vertical",
+        "layout": "horizontal",
         "contents": [
           {
-            "type": "image",
-            "url": "https://img2.pic.in.th/pic/-872d483f7320f659.jpg",
-            "margin": "xs",
-            "align": "center",
-            "gravity": "top",
-            "offsetTop": "xs",
-            "aspectRatio": "9:1.5",
-            "size": "full",
-            "aspectMode": "cover"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/7418e69a50ef608963801fd1cb243961.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "อ่านเพิ่มเติม",
+                  "uri": data.group7_link
+                }
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [],
+            "width": "5%"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/71361d56f862147bd6079e4a19d2ae3f.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิกเพื่อแชร์",
+                  "uri": data.group7_share
+                }
+              }
+            ]
           }
         ],
-        "backgroundColor": "#fefefe",
-        "paddingAll": "none"
-      },
-      "styles": {
-        "hero": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "body": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "footer": {
-          "backgroundColor": "#f1f5f3"
-        }
+        "backgroundColor": "#03303Acc",
+        "paddingAll": "1px"
       }
     },
     {
       "type": "bubble",
-      "header": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/flex-mdu25/Pr2rdo/refs/heads/main/img/h-2rdo.png",
-            "size": "full",
-            "aspectRatio": "15:2",
-            "aspectMode": "cover"
-          }
-        ],
-        "paddingAll": "none",
-        "backgroundColor": "#042e6c"
-      },
       "hero": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": data.group6_img1,
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:1",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": data.group6_img1
-            }
-          },
-          {
-            "type": "text",
-            "text": data.group6_description,
-            "wrap": true,
-            "margin": "sm"
-          }
-        ],
-        "paddingAll": "sm"
+        "type": "image",
+        "url": "https://img5.pic.in.th/file/secure-sv1/-16994e3802fef94f7.jpg",
+        "size": "full",
+        "aspectRatio": "1400:200",
+        "aspectMode": "cover"
       },
       "body": {
         "type": "box",
         "layout": "vertical",
         "contents": [
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "xs"
+            "type": "text",
+            "text": "วส.934 ",
+            "size": "md",
+            "color": "#F8F8FF",
+            "weight": "bold",
+            "align": "center",
+            "offsetBottom": "md"
           },
           {
             "type": "box",
-            "layout": "horizontal",
+            "layout": "vertical",
             "contents": [
               {
                 "type": "box",
@@ -1080,166 +1118,135 @@
                 "contents": [
                   {
                     "type": "image",
-                    "url": data.group6_img2,
+                    "url": data.group8_img,
+                    "margin": "none",
                     "size": "full",
                     "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group6_img2
-                    }
+                    "aspectRatio": "16:10"
                   }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                ]
               },
               {
                 "type": "box",
                 "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group6_img3,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group6_img3
-                    },
-                    "aspectRatio": "4:3"
-                  }
-                ],
-                "width": "35%",
-                "justifyContent": "center",
-                "paddingAll": "md"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group6_img4,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group6_img4
-                    }
-                  }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                "contents": []
               }
             ],
-            "paddingAll": "xs",
-            "backgroundColor": "#ebecee"
+            "backgroundColor": "#ffffff",
+            "borderWidth": "medium",
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "xs"
           },
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "sm"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": data.group8_description,
+                "size": "md",
+                "color": "#FFFAFA",
+                "gravity": "center",
+                "wrap": true,
+                "weight": "regular"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": []
+              }
+            ],
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "md"
           }
         ],
-        "paddingAll": "xs",
-        "backgroundColor": "#fefefe",
-        "borderWidth": "none",
-        "paddingEnd": "none",
-        "offsetEnd": "xs",
-        "justifyContent": "flex-end",
-        "alignItems": "center"
+        "background": {
+          "type": "linearGradient",
+          "angle": "0deg",
+          "startColor": "#4876FF",
+          "endColor": "#0000FF"
+        }
       },
       "footer": {
         "type": "box",
-        "layout": "vertical",
+        "layout": "horizontal",
         "contents": [
           {
-            "type": "image",
-            "url": "https://img2.pic.in.th/pic/-872d483f7320f659.jpg",
-            "margin": "xs",
-            "align": "center",
-            "gravity": "top",
-            "offsetTop": "xs",
-            "aspectRatio": "9:1.5",
-            "size": "full",
-            "aspectMode": "cover"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/7418e69a50ef608963801fd1cb243961.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "อ่านเพิ่มเติม",
+                  "uri": data.group8_link
+                }
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [],
+            "width": "5%"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/71361d56f862147bd6079e4a19d2ae3f.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิกเพื่อแชร์",
+                  "uri": data.group8_share
+                }
+              }
+            ]
           }
         ],
-        "backgroundColor": "#fefefe",
-        "paddingAll": "none"
-      },
-      "styles": {
-        "hero": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "body": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "footer": {
-          "backgroundColor": "#f1f5f3"
-        }
+        "backgroundColor": "#03303Acc",
+        "paddingAll": "1px"
       }
     },
     {
       "type": "bubble",
-      "header": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/flex-mdu25/Pr2rdo/refs/heads/main/img/h-2rdo.png",
-            "size": "full",
-            "aspectRatio": "15:2",
-            "aspectMode": "cover"
-          }
-        ],
-        "paddingAll": "none",
-        "backgroundColor": "#042e6c"
-      },
       "hero": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": data.group7_img1,
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:1",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": data.group7_img1
-            }
-          },
-          {
-            "type": "text",
-            "text": data.group7_description,
-            "wrap": true,
-            "margin": "sm"
-          }
-        ],
-        "paddingAll": "sm"
+        "type": "image",
+        "url": "https://img5.pic.in.th/file/secure-sv1/-16994e3802fef94f7.jpg",
+        "size": "full",
+        "aspectRatio": "1400:200",
+        "aspectMode": "cover"
       },
       "body": {
         "type": "box",
         "layout": "vertical",
         "contents": [
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "xs"
+            "type": "text",
+            "text": "วส.934 ",
+            "size": "md",
+            "color": "#F8F8FF",
+            "weight": "bold",
+            "align": "center",
+            "offsetBottom": "md"
           },
           {
             "type": "box",
-            "layout": "horizontal",
+            "layout": "vertical",
             "contents": [
               {
                 "type": "box",
@@ -1247,110 +1254,104 @@
                 "contents": [
                   {
                     "type": "image",
-                    "url": data.group7_img2,
+                    "url": data.group9_img,
+                    "margin": "none",
                     "size": "full",
                     "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group7_img2
-                    }
+                    "aspectRatio": "16:10",
+                    "animated": true
                   }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                ]
               },
               {
                 "type": "box",
                 "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group7_img3,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group7_img3
-                    },
-                    "aspectRatio": "4:3"
-                  }
-                ],
-                "width": "35%",
-                "justifyContent": "center",
-                "paddingAll": "md"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group7_img4,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "4:3",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": data.group7_img4
-                    }
-                  }
-                ],
-                "justifyContent": "center",
-                "width": "35%",
-                "paddingAll": "md"
+                "contents": []
               }
             ],
-            "paddingAll": "xs",
-            "backgroundColor": "#ebecee"
+            "backgroundColor": "#ffffff",
+            "borderWidth": "medium",
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "xs"
           },
           {
-            "type": "separator",
-            "color": "#717271",
-            "margin": "sm"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": data.group9_description,
+                "size": "md",
+                "color": "#FFFAFA",
+                "gravity": "center",
+                "wrap": true,
+                "weight": "regular"
+              }
+            ],
+            "borderColor": "#005a91",
+            "cornerRadius": "md",
+            "offsetTop": "md",
+            "offsetBottom": "lg",
+            "paddingAll": "md"
           }
         ],
-        "paddingAll": "xs",
-        "backgroundColor": "#fefefe",
-        "borderWidth": "none",
-        "paddingEnd": "none",
-        "offsetEnd": "xs",
-        "justifyContent": "flex-end",
-        "alignItems": "center"
+        "background": {
+          "type": "linearGradient",
+          "angle": "0deg",
+          "startColor": "#4876FF",
+          "endColor": "#0000FF"
+        }
       },
       "footer": {
         "type": "box",
-        "layout": "vertical",
+        "layout": "horizontal",
         "contents": [
           {
-            "type": "image",
-            "url": "https://img2.pic.in.th/pic/-872d483f7320f659.jpg",
-            "margin": "xs",
-            "align": "center",
-            "gravity": "top",
-            "offsetTop": "xs",
-            "aspectRatio": "9:1.5",
-            "size": "full",
-            "aspectMode": "cover"
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/7418e69a50ef608963801fd1cb243961.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "อ่านเพิ่มเติม",
+                  "uri": data.group9_link
+                }
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [],
+            "width": "5%"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://img5.pic.in.th/file/secure-sv1/71361d56f862147bd6079e4a19d2ae3f.png",
+                "size": "xxl",
+                "aspectRatio": "10:4",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิกเพื่อแชร์",
+                  "uri": data.group9_share
+                }
+              }
+            ]
           }
         ],
-        "backgroundColor": "#fefefe",
-        "paddingAll": "none"
-      },
-      "styles": {
-        "hero": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "body": {
-          "backgroundColor": "#f1f5f3"
-        },
-        "footer": {
-          "backgroundColor": "#f1f5f3"
-        }
+        "backgroundColor": "#03303Acc",
+        "paddingAll": "1px"
       }
     }
   ]
