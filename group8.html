@@ -38,7 +38,7 @@
       }
 
       async function fetchDataFromGoogleSheet(id) {
-        const url = `https://script.google.com/macros/s/AKfycbx-KDnrlvcKQ205kX1yVB7NT6-jP4KJjrfPrLtHk3h6CNaOlUA5h-ZkTLumCh30N82GXA/exec?id=${id}`;
+        const url = `https://script.google.com/macros/s/AKfycbwiV3SpBztAZSQE4QGnubp6YaQVZEB41HcEEU5Mrx7pZEBijtk9To6Ygv18VSbVNQJmig/exec?id=${id}`;
         const response = await fetch(url);
         const data = await response.json();
         return data;
@@ -1213,138 +1213,6 @@
                   "type": "uri",
                   "label": "คลิกเพื่อแชร์",
                   "uri": data.group8_share
-                }
-              }
-            ]
-          }
-        ],
-        "backgroundColor": "#03303Acc",
-        "paddingAll": "1px"
-      }
-    },
-    {
-      "type": "bubble",
-      "hero": {
-        "type": "image",
-        "url": "https://img5.pic.in.th/file/secure-sv1/-16994e3802fef94f7.jpg",
-        "size": "full",
-        "aspectRatio": "1400:200",
-        "aspectMode": "cover"
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "วส.934 ",
-            "size": "md",
-            "color": "#F8F8FF",
-            "weight": "bold",
-            "align": "center",
-            "offsetBottom": "md"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": data.group9_img,
-                    "margin": "none",
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "16:10",
-                    "animated": true
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": []
-              }
-            ],
-            "backgroundColor": "#ffffff",
-            "borderWidth": "medium",
-            "borderColor": "#005a91",
-            "cornerRadius": "md",
-            "offsetTop": "md",
-            "offsetBottom": "lg",
-            "paddingAll": "xs"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": data.group9_description,
-                "size": "md",
-                "color": "#FFFAFA",
-                "gravity": "center",
-                "wrap": true,
-                "weight": "regular"
-              }
-            ],
-            "borderColor": "#005a91",
-            "cornerRadius": "md",
-            "offsetTop": "md",
-            "offsetBottom": "lg",
-            "paddingAll": "md"
-          }
-        ],
-        "background": {
-          "type": "linearGradient",
-          "angle": "0deg",
-          "startColor": "#4876FF",
-          "endColor": "#0000FF"
-        }
-      },
-      "footer": {
-        "type": "box",
-        "layout": "horizontal",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "image",
-                "url": "https://img5.pic.in.th/file/secure-sv1/7418e69a50ef608963801fd1cb243961.png",
-                "size": "xxl",
-                "aspectRatio": "10:4",
-                "action": {
-                  "type": "uri",
-                  "label": "อ่านเพิ่มเติม",
-                  "uri": data.group9_link
-                }
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [],
-            "width": "5%"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "image",
-                "url": "https://img5.pic.in.th/file/secure-sv1/71361d56f862147bd6079e4a19d2ae3f.png",
-                "size": "xxl",
-                "aspectRatio": "10:4",
-                "action": {
-                  "type": "uri",
-                  "label": "คลิกเพื่อแชร์",
-                  "uri": data.group9_share
                 }
               }
             ]
